@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Hello, SeaJS!</title>
+	</head>
+	<body>
+		<p id="out"></p>
+		<button onclick="loadHello()">
+			loadHello
+		</button>
+		
+		<button onclick="loadTBH5()">
+			loadtbh5
+		</button>
+		<p>
+		
+		<script src="js/seajs/sea-debug.js"></script>
+		<script>
+			function loadHello() {
+				seajs.use('hello', function(hello) {
+					hello.sayHello();
+				});
+			}
+			
+			function loadTBH5() {
+				seajs.use('h5_base', function(h5) {
+					console.log(h5);
+				});
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Hello, SeaJS!</title>
+	</head>
+	<body>
+		<p id="out">
+			<button onclick="loadHello()">
+				loadHello
+			</button>
+			<button onclick="testUriBroker()">
+				testUriBrokerObj
+			</button>
+			
+			<button onclick="testUriBrokerFn()">
+				testUriBrokerFn
+			</button>
+			
+			<button onclick="testUriBrokerSeajs()">
+				testUriBrokerSeajs
+			</button>
+		<p>
+			<script src="js_fav/zepto/zepto.js"></script>
+			<script src="js_fav/sea.js"></script>
+			<script>
+				function loadHello() {
+					seajs.use('fav_url', function(fav_url) {
+						fav_url.getUrl('detail');
+					});
+				}
+
+				function testUriBroker() {
+					
+					
+					var uriBroker = {
+						
+						host : 'm.taobao.com',
+						path : 'mytaobao.htm',
+						queryData : null, 
+						
+						render : function(){
+							return this.host + this.path + this.queryData;
+						}
+						
+					}
+					
+					console.log(uriBroker.render());
+					
+
+				}
+				
+				function testUriBrokerFn() {
+					
+					
+					function uriBroker (){
+						this.host = arguments[0];
+					}
+					
+					uriBroker.prototype.render = function(){
+						
+						return this.host + this.path + this.queryData;
+					}
+					
+					
+					var _default = {
+						
+						host : 'm.taobao.com',
+						path : 'mytaobao.htm',
+						queryData : 123456, 
+					}
+					
+					var target = new uriBroker('a.taobao.com');
+					target.path = 'hello world';
+					
+					console.log($.extend(target , _default).render());
+					
+
+				}
+				
+				function testUriBrokerSeajs() {
+					
+					seajs.use('uriBroker', function(uriBroker) {
+						var uri = new uriBroker.uriBroker('http://m.taobao.com','my_taobao.htm');
+						console.log(uri.render());
+					});
+					
+
+				}
+				
+				
+			</script>
+	</body>
+</html>

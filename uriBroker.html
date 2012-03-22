@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Hello, uriBroker!</title>
+	</head>
+	<body>
+		<p id="out">
+			<button onclick="loadHello()">
+				loadHello
+			</button>
+			<button onclick="testUriBroker()">
+				testUriBrokerObj
+			</button>
+			<button onclick="testUriBrokerFn()">
+				testUriBrokerFn
+			</button>
+			<button onclick="testUriBrokerSeajs()">
+				testUriBrokerSeajs
+			</button>
+		<p>
+			<script src="js_fav/zepto/zepto.js"></script>
+			<script src="js_fav/sea.js"></script>
+			<script>
+				window.localStorage.setItem('TAOBAO_APP_PARAM', JSON.stringify({
+					sid : 123456,
+					ttid : 123456
+				}));
+
+				function log(str) {
+					console.log(str);
+				}
+
+
+				seajs.use('fav_url', function(fav_url) {
+					var i = 1;
+					var start = new Date().getTime();
+					while(i > 0) {
+						log(fav_url.getUrl('detail', {
+							itemId : 123456
+						}));
+						//fav是host fav_shop是path
+						log(fav_url.getUrl('fav_shop'));
+						log(fav_url.getUrl('fav_item'));
+						log(fav_url.getUrl('shop', {
+							shopId : 123456
+						}));
+						log(fav_url.getUrl('mtop'));
+						log(fav_url.getUrl('mtop_queryColGood'));
+						log(fav_url.getUrl('mtop_queryColGood', {}));
+						log(fav_url.getUrl('mtop', {
+							method : 'queryColGood'
+						}));
+						log(fav_url.getUrl('helloworld', {
+							dps : '123456'
+						}));
+						log(fav_url.getUrl('helloworld', {
+							dps : '123456',
+							domain : 'amarzon'
+						}));
+						i--;
+					}
+					//alert(new Date().getTime() - start);
+				});
+
+			</script>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess  -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>zepto</title>
+		<meta name="description" content="" />
+		<meta name="author" content="wuzhong" />
+		<!--
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		-->
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		
+		<script src="js/libs/zepto.js"></script>
+		<script src="js/h5_base.js"></script>
+		<script src="js/zepto/test.js"></script>
+	</head>
+	<body>
+		<div>
+			<header>
+				<h1>zepto</h1>
+			</header>
+			<nav>
+				<p>
+					<a href="/">Home</a>
+				</p>
+				<p>
+					<a href="/contact">Contact</a>
+				</p>
+			</nav>
+			
+			<div style="border: 1">
+				
+				<button onclick="$.showOs()" id="showOs">showOs</button>
+				
+				<button onclick="$.localSotrage()" id="localstorage">localstorage</button>
+				
+				<button onclick="$.middleJump()" id="jumper">页面跳转</button>
+				
+				<button onclick="test()" id="test">test</button>
+				
+				<button onclick="createImgs()" id="createImgs">createImgs</button>
+				
+				<button onclick="displayJsonValue()" id="displayJsonValue">displayJsonValue</button>
+				
+			</div>
+			
+			<br />
+			<div data-pds='3000'  style="border: solid">	
+				<div data-pds='4000' style="border: solid">
+					<button data-pds='5000'>获取收藏店铺信息(3000||4000||5000)</button>
+				</div>			
+				<div data-pds='4001' style="border: solid">
+					<a href="#" data-pds='5001'>5001</a>
+				</div>		
+				<div data-pds='4002' style="border: solid">4002</div>		
+				<a data-pds='4003' href="#">4003</a>			
+				<button data-pds='4004'>4004</button>		
+			</div>
+			
+			<h1>动态</h1>
+			<div data-pds='3001' class="detail" id="item_list">		
+				
+			</div>
+			
+			<footer>
+				<p>
+					&copy; Copyright  by wuzhong
+				</p>
+			</footer>
+		</div>
+	</body>
+	
+</html>

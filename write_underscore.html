@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Underscore骨骼 </title>
+		<script src="js/write_underscore.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 结果测试 步骤：将数组[1,2,3]进行链式包装，然后将其用val * 2来map，紧接着用filter进行val < 5过滤,
+			// 然后pop,concat最后获取其值value
+			
+			var re = _([1, 2, 3]);
+/*
+			console.log(re);
+			
+			var chan = _([1, 2, 3]).chain();
+			console.log(chan);
+			
+			var m =  _([1, 2, 3]).chain().map(function(val) {
+				return val * 2;
+			});
+			console.log(m);
+			
+			var re = m.filter(function(val) {
+				return val < 5;
+			}).pop().concat(['5']).value();
+
+			console.log(re);
+			
+			var a = [1,2,3];
+			a.forEach(function(v){
+				console.log(v);
+			});*/
+			
+			_({hello:12345}).each(function (n){
+				console.log(n);
+			});
+
+
+		</script>
+	</body>

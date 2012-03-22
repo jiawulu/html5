@@ -1,0 +1,34 @@
+<script>
+	localStorage.setItem('ttid',12345);
+	localStorage.setItem('sid','2c2123b0458506a59faf53ba9c1f603c');
+</script>
+
+<script src="sea.js"></script>
+<script src="config.js"></script>
+<script src="uri.js"></script>
+<script src="mtop.js"></script>
+
+<script>
+	seajs.use('uri', function(uri){
+		shopHost = uri.createURI('shop');
+		print(uri.renderURI(shopHost, 'shop_index.htm', {'a':3,'b':'aaa'},'shop/v/5','tmall'));
+		print(uri.renderURI(shopHost, 'shop_index.htm', {'a':3,'b':'aaa'},'shop/v/5'));
+		print(uri.renderURI(shopHost, 'shop_index.htm', {'a':3,'b':uri.encode('��')}));
+		print(uri.renderURI(shopHost, 'shop_index.htm'));
+		print(uri.renderURI(shopHost));
+	});
+
+	seajs.use('mtop', function(mtop){
+		print(mtop.queryColGood(1, 'tag', 1, 5));
+		print(mtop.queryColShop(1, 'tag', 1, 5));
+	});
+
+	seajs.use('cdn', function(cdn){
+		print(cdn.getImg('i1/T1ZFlcXdNdXXbjhTIT_013215.jpg', 100, 100));
+		print(cdn.getImg('ef/sxe/T1ZFlcXdNdXXbjhTIT_013216.jpg', 80, 80));
+	});
+
+	function print(s) {
+		console.log(s);
+	}
+</script>
