@@ -1089,8 +1089,14 @@ window.Zepto = Zepto;
         var result, error = false;
         if ((xhr.status >= 200 && xhr.status < 300) || (xhr.status == 0 && protocol == 'file:')) {
           if (mime == 'application/json' && !(/^\s*$/.test(xhr.responseText))) {
-            try { result = JSON.parse(xhr.responseText); }
-            catch (e) { error = e; }
+            try {
+            	console.log(xhr.responseText);
+            	 result = JSON.parse(xhr.responseText); 
+            	 }
+            catch (e) { 
+            	console.log(e);
+            	error = e;
+            	 }
           }
           else result = xhr.responseText;
           if (error) ajaxError(error, 'parsererror', xhr, settings);

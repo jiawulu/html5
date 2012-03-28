@@ -10,17 +10,22 @@
 			// 然后pop,concat最后获取其值value
 			
 			var re = _([1, 2, 3]);
-/*
+
 			console.log(re);
 			
 			var chan = _([1, 2, 3]).chain();
 			console.log(chan);
 			
-			var m =  _([1, 2, 3]).chain().map(function(val) {
-				return val * 2;
-			});
+			var m =  _([1, 2, 3]);
+			
 			console.log(m);
 			
+			var re = m.chain().filter(function(val) {
+				return val < 5;
+			}).pop().concat(['5']).value();
+			
+			console.log(re)
+			/*
 			var re = m.filter(function(val) {
 				return val < 5;
 			}).pop().concat(['5']).value();
